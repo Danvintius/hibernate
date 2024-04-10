@@ -2,21 +2,12 @@ package ru.netology.hibernate.domain;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Table(name = "persons")
 public class Person {
-
-    @Getter
-    @Setter
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String name;
-    private String surname;
-    private int age;
+    @EmbeddedId
+    private Contact contact;
     @Column (name = "phone_number")
     private String phoneNumber;
 
@@ -27,11 +18,8 @@ public class Person {
 
     }
 
-    public Person(Long id, String name, String surname, int age, String phoneNumber, String city) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
+    public Person(Contact contact, String name, String surname, int age, String phoneNumber, String city) {
+        this.contact = new Contact();
         this.phoneNumber = phoneNumber;
         this.city = city;
     }
