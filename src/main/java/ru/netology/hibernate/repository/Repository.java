@@ -11,14 +11,15 @@ public interface Repository extends CrudRepository<Person, Long> {
 
     }
 
-    public default String getPersonsByCity(String city) {
+    public default ArrayList<Person> getPersonsByCity(String city) {
         ArrayList<Person> personList = new ArrayList<Person>();
+        ArrayList<Person> persons = new ArrayList<Person>();
         for (int i = 0; i < personList.size(); i++) {
             if (personList(i).city == city) {
-                return personList(i);
+                persons.add(personList(i));
             }
         }
-        return city;
+        return persons;
     }
 }
 
