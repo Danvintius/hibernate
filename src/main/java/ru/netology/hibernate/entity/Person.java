@@ -1,4 +1,4 @@
-package ru.netology.hibernate.domain;
+package ru.netology.hibernate.entity;
 
 
 import jakarta.persistence.*;
