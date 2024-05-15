@@ -24,4 +24,7 @@ public class Person {
         this.city = city;
     }
 
+    public String getCity() {
+        return city;
+    }
 }

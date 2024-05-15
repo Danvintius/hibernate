@@ -1,4 +1,24 @@
 package ru.netology.hibernate.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestParam;
+import ru.netology.hibernate.entity.Person;
+import ru.netology.hibernate.repository.PersonRepository;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
+
+@Controller
 public class MainController {
+
+    private final PersonRepository repository;
+
+    public MainController(PersonRepository repository) {
+        this.repository = repository;
+    }
+
+    @GetMapping("/persons/by-city")
+    private List<Person> getPersonsByCity(@RequestParam(value = "city", required = false) String city) {
+        return repository.getPersonsByCity(city);
+    }
 }
