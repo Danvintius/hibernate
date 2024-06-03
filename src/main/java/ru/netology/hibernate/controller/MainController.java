@@ -1,14 +1,14 @@
 package ru.netology.hibernate.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import ru.netology.hibernate.entity.Person;
 import ru.netology.hibernate.repository.PersonRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class MainController {
 
     private final PersonRepository repository;

@@ -11,12 +11,12 @@ import ru.netology.hibernate.entity.Person;
 import java.util.*;
 
 @Repository
-public interface PersonRepository extends CrudRepository<Person, Contact> {
+public class PersonRepository extends CrudRepository<Person, Contact> {
     @PersistenceContext
-    public EntityManager entityManager;
+    protected EntityManager entityManager;
 
-    public default List<Person> getPersonsByCity(String city) {
-        Query query = entityManager.createNamedQuery("findPersonByCity");
+    public List<Person> getPersonsByCity(String city) {
+        Query query = entityManager.createNamedQuery("select * from persons where city = city");
         query.setParameter("city", city);
         List<Person> personList = query.getResultList();
 
