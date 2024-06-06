@@ -11,7 +11,7 @@ import ru.netology.hibernate.entity.Person;
 import java.util.*;
 
 @Repository
-public class PersonRepository extends CrudRepository<Person, Contact> {
+public class PersonRepository {
     @PersistenceContext
     protected EntityManager entityManager;
 
