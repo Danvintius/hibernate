@@ -24,5 +24,13 @@ public interface PersonRepository extends JpaRepository<Long, Contact> {
         return personList;
     }
 
+    public List<Person> getPersonsByAge() {
+        return personList;
+    }
+
+    public List<Person> getPersonsByNameAndSurname() {
+        return personList;
+    }
+
 }
 
