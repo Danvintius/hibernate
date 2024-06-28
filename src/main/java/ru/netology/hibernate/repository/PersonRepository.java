@@ -18,5 +18,6 @@ public interface PersonRepository extends JpaRepository<Long, Contact> {
     List<Person> findByAge(int age);
     List<Person> findByNameAndSurname(String name, String surname);
 
+    List<Person> getPersonsByCity(String city);
 }
 
